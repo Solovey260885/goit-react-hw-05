@@ -1,0 +1,67 @@
+.textWarning {
+  font-size: 24px;
+  color: brown;
+}
+.movieDetailWrap {
+  margin: 8px;
+  max-width: 1400px;
+}
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 100px;
+  height: 40px;
+
+  background: #393786;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background: #6c8cff;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 48px;
+  color: darkslategray;
+}
+.poster {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: #e8ebfa;
+}
+.textOverview {
+  color: darkslategray;
+  font-size: 24px;
+}
+
+.img {
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.7);
+}
+
+.castReviewsWrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  font-size: 24px;
+  color: darkslategray;
+  background: #c4c2c2;
+  margin-top: 12px;
+}
+.active {
+  color: rgb(228, 91, 41);
+}

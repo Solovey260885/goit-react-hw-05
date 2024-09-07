@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getSearchMovies } from "../../movies-api";
 import { useSearchParams } from "react-router-dom";
 import MovieList from "../../components/MovieList/MovieList";
+import css from "./MoviesPage.module.css";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -49,20 +50,25 @@ export default function MoviesPage() {
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search for a movie"
-        />
-        <button type="submit">Search</button>
-      </form>
+      <div className={css.mPageWrap}>
+        <form onSubmit={handleSearch} className={css.form}>
+          <input
+            className={css.searchInput}
+            type="text"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search for a movie"
+          />
+          <button type="submit" className={css.btn}>
+            Search
+          </button>
+        </form>
+      </div>
       {inputError && <p style={{ color: "red" }}>{inputError}</p>}
-      {loading && <p>Loading...</p>}
+      {loading && <p className={css.textWarning}>Loading...</p>}
       {error && <p>{error}</p>}
       {!loading && !error && movies.length === 0 && query && (
-        <p>No movies found for "{query}"</p>
+        <p className={css.textWarning}>No movies found for "{query}"</p>
       )}
       {!loading && !error && movies.length > 0 && <MovieList movies={movies} />}
     </div>

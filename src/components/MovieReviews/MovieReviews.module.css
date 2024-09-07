@@ -1,0 +1,13 @@
+.reviewsWrap {
+  padding: 10px;
+}
+
+.reviewsTitleAuthor {
+  font-size: 24px;
+  color: darkslategray;
+  background-color: #dde1f3;
+}
+.reviewsContent {
+  font-size: 20px;
+  color: darkslategray;
+}

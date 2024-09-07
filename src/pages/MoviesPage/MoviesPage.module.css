@@ -1,0 +1,45 @@
+.mPageWrap {
+  background-color: #916afa;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 8px 10px 8px 30px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin: 4px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 100px;
+  height: 40px;
+
+  background: #393786;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background: #6c8cff;
+}
+
+.textWarning {
+  font-size: 24px;
+  color: brown;
+}

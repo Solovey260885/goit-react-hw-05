@@ -1,6 +1,15 @@
 import { useRef, useEffect, useState, Suspense } from "react";
-import { useParams, Link, Outlet, useLocation } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
+
 import { getMovieDetails } from "../../movies-api";
+import clsx from "clsx";
+import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -38,20 +47,39 @@ export default function MovieDetailsPage() {
   }
 
   return (
-    <div>
-      <Link to={backLinkRef.current}>Go back</Link>
+    <div className={css.movieDetailWrap}>
+      <Link to={backLinkRef.current} className={css.btn}>
+        Go back
+      </Link>
 
-      <h1>{movie.title}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <p>{movie.overview}</p>
-      <div>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+      <h1 className={css.title}>{movie.title}</h1>
+      <div className={css.poster}>
+        <img
+          className={css.img}
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <p className={css.textOverview}>{movie.overview}</p>
       </div>
-      <Suspense fallback={<p>Loading...</p>}>
+      <div className={css.castReviewsWrap}>
+        <NavLink
+          to="cast"
+          className={(props) => {
+            return clsx(css.link, props.isActive && css.active);
+          }}
+        >
+          Cast
+        </NavLink>
+        <NavLink
+          to="reviews"
+          className={(props) => {
+            return clsx(css.link, props.isActive && css.active);
+          }}
+        >
+          Reviews
+        </NavLink>
+      </div>
+      <Suspense fallback={<p className={css.textWarning}>Loading...</p>}>
         <Outlet />
       </Suspense>
     </div>

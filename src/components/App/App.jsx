@@ -13,9 +13,11 @@ const NotFoundPage = lazy(() =>
   import("../../pages/NotFoundPage/NotFoundPage")
 );
 
+import css from "./App.module.css";
+
 export default function App() {
   return (
-    <div>
+    <div className={css.app}>
       <Navigation />
       <Suspense fallback={null}>
         <Routes>

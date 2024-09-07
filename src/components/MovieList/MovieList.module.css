@@ -1,0 +1,12 @@
+.movieList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.movieListLink {
+  text-decoration: none;
+  color: darkslategray;
+}
